@@ -21,9 +21,16 @@ class Perfil(models.Model):
     agencia = models.CharField(max_length=30, null=True)
     tel_agencia = models.CharField(max_length=15, null=True)
     activo = models.BooleanField(default=True)
+    imagen1 = models.ImageField(null=True)
+    imagen2 = models.ImageField(null=True)
+    imagen3 = models.ImageField(null=True)
+    imagen4 = models.ImageField(null=True)
+
     def __str__(self):
         return self.nombres
 
     class Meta:
             verbose_name_plural = "Vista de Perfiles"
-
+# class PropertyImage(models.Model):
+#     property = Property.objects.get(pk=1)
+# image_list = property.images.all()
