@@ -60,7 +60,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'tgc.urls'
 
-WSGI_APPLICATION = 'tgc.wsgi.application'
+
 
 
 # Database
