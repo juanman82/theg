@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<form style="margin-left: 15px; height:5px !important;" action="/search" method="get">
+    <input    placeholder="Buscar..." type="text"  name="q">
+</form><br>
+<div><h1>{{ object.nombre_completo.upper }}</h1></div>
+
+<div class="row">
+   <br>
+  </div>
+
+
+
+
+
+    <div class="row" align="center">
+    {% if object.imagen1 = '' %}
+        <div class="col-md-3"><p>no imagen</p></div>
+    {% else %}
+        <div class="col-md-3"><img width="80%" src="/media/{{ object.imagen1 }}" ></div>
+    {% endif %}
+  {% if object.imagen2 = '' %}
+        <div class="col-md-3"><p>no imagen</p></div>
+    {% else %}
+        <div class="col-md-3"><img width="80%" src="/media/{{ object.imagen2 }}" ></div>
+    {% endif %}
+  {% if object.imagen3 = '' %}
+        <div class="col-md-3"><p>no imagen</p></div>
+    {% else %}
+        <div class="col-md-3"><img width="80%" src="/media/{{ object.imagen3 }}" ></div>
+    {% endif %}
+    {% if object.imagen4 = '' %}
+        <div class="col-md-3"><p>no imagen</p></div>
+    {% else %}
+        <div class="col-md-3"><img width="80%" src="/media/{{ object.imagen4 }}" ></div>
+    {% endif %}
+</div>
+
+
+
+
+{% endblock %}

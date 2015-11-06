@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<form style="margin-left: 15px; height:5px !important;" action="/search" method="get">
+    <input    placeholder="Buscar..." type="text"  name="q">
+</form>
+{% for item in perfil_mujer_list %}
+
+
+
+
+{% endfor %}
+
+
+{% endblock %}

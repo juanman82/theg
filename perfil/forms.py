@@ -1,4 +1,4 @@
 from django import forms
 
-from .models import registro
-
+class PaisForm(forms.Form):
+    pais = forms.CharField(label='pais', max_length=100)

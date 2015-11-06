@@ -32,14 +32,20 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django_admin_bootstrapped',
     'django.contrib.admin',
+    'perfil',
+    'registration',
+    'haystack',
     'django.contrib.auth',
     'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
-    'perfil',
+
+
+    'localflavor',
+
+
 
 )
 
@@ -70,7 +76,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'es-mx'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -94,9 +100,12 @@ TEMPLATE_DIRS = (
 )
 
 
-REGISTRATION_AUTO_LOGIN = True
-ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
-REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+REGISTRATION_OPEN = True                # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
+LOGIN_REDIRECT_URL = '/rango/'  # The page you want users to arrive at after they successful log in
+LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
+
 
 
 EMAIL_HOST = 'mail.monographics.com.mx'
@@ -109,3 +118,13 @@ DEFAULT_FROM_EMAIL = 'juan.ag@monographics.com.mx'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8080/solr'
+        # ...or for multicore...
+        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

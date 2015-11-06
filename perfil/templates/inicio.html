@@ -1,157 +1,21 @@
+{% extends "base.html"%}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>The Global Casting |  </title>
-
-    <!-- Bootstrap Core CSS -->
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"  type="text/css" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/full-slider.css' %}"  type="text/css" />
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">The Global Casting</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#acerca">About</a></h5>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+{% block content %}
     <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <!--<ol class="carousel-indicators">-->
-            <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-            <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
-            <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
-        <!--</ol>-->
-
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{% static 'img/TGClogonegro.png'%}');"></div>
-                 <div class="carousel-caption">
-
-                </div>
-            </div>
-            <!--<div class="item">-->
-                <!--&lt;!&ndash; Set the second background image using inline CSS below. &ndash;&gt;-->
-                <!--<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>-->
-                <!--<div class="carousel-caption">-->
-                    <!--<h2>Caption 2</h2>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="item">-->
-                <!--&lt;!&ndash; Set the third background image using inline CSS below. &ndash;&gt;-->
-                <!--<div class="fill" style="background-image:url('{% static 'img/TGClogonegro.png'%}');"></div>-->
-                <!--<div class="carousel-caption">-->
-                    <!--<h2>Caption 3</h2>-->
-                <!--</div>-->
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
-    </header>
+   <div class="jumbotron"><form style="margin-left: 15px; height:5px !important;" action="/search" method="get">
+    <input    placeholder="Buscar..." type="text"  name="q">
+</form></div>
 
     <!-- Page Content -->
-    <div class="container">
 
-        <div class="row" id="acerca">
-            <div class="col-lg-12">
-                <h1>Acerca de The Global Casting</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum vulputate vestibulum. In erat nulla, finibus eu ex vel, tempor consequat justo. In varius, quam non viverra ultricies, erat turpis tempor sem, a aliquam ligula turpis ut ligula. Duis lectus nisl, dignissim sit amet molestie at, consequat ac sem. Aenean congue auctor urna, ut maximus urna fermentum vitae. Proin maximus mi neque, at tincidunt massa faucibus eget. In varius dictum odio.
 
-In sit amet magna nibh. Pellentesque at pellentesque odio, ut hendrerit ipsum. Suspendisse sed ipsum nec nibh egestas placerat id id elit. Nam at risus a arcu porttitor posuere. In suscipit augue at porta malesuada. Donec at lorem turpis. Donec consectetur aliquet arcu, quis fringilla risus eleifend vel.
-
-In mattis, orci nec luctus iaculis, leo felis pretium lectus, et porta risus purus ac augue. Praesent vitae egestas nunc. Suspendisse varius pretium erat ut ultrices. Aenean eget metus ultricies, congue metus a, egestas mi. Sed malesuada rhoncus sapien, ac eleifend orci commodo at. Etiam vestibulum in lectus vel laoreet. Donec consectetur, sapien a vehicula pretium, ante lectus iaculis augue, malesuada vulputate elit magna sed magna. Etiam ut consequat erat. Ut dolor nisl, congue eu nisi eget, elementum elementum ex.
-
-Nunc nulla quam, porta eleifend turpis vitae, cursus hendrerit odio. Aenean at ipsum tempor, porta sem eget, tincidunt dolor. Duis gravida vehicula rutrum. Morbi massa mauris, ornare sit amet auctor sed, sodales non felis. Nunc sodales, est at ultricies vehicula, est augue pretium lectus, id varius ipsum magna non nibh. Donec vitae massa nec justo suscipit faucibus. Etiam posuere imperdiet aliquet. Morbi non auctor urna. Vivamus vestibulum arcu a commodo imperdiet. Morbi tincidunt augue quis volutpat maximus. Nulla eget tristique turpis, vel egestas felis. Praesent diam eros, rhoncus ut leo hendrerit, vestibulum cursus nunc.</p></div>
-        </div>
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; The Global Casting</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
+    {% endblock %}
     <!-- /.container -->
 
-    <!-- jQuery -->
-     <script src="{% static 'js/jquery.js' %}"></script>
 
 
-    <!-- Bootstrap Core JavaScript -->
-     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-   >
 
     <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
 
-</body>
 
-</html>

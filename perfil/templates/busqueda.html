@@ -1,0 +1,11 @@
+
+
+{% block content %}
+    <form action="search" method="GET">
+        {{ f.form.as_p }}
+        <input type="submit"  />
+    </form>
+    {% for obj in filter %}
+
+    {% endfor %}
+{% endblock %}
