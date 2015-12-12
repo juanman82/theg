@@ -3,5 +3,6 @@
 
 {{ object.pais }}
 
+
 {{ object.estatura }}
 {{ object.iamagen1.all }}
